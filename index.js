@@ -36,7 +36,6 @@ async function run() {
       res.send(result);
     })
 
-
     // view details er jonno
     app.get('/tourist/:id', async (req, res) => {
       const id = req.params.id;
