@@ -36,6 +36,15 @@ async function run() {
       res.send(result);
     })
 
+    //myList
+    app.get('/users', async (req, res) => {
+      const cursor = touristCollection.find();
+      const users = await cursor.toArray();
+      res.send(users);
+    })
+
+
+
     // view details er jonno
     app.get('/tourist/:id', async (req, res) => {
       const id = req.params.id;
