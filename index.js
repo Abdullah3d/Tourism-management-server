@@ -37,10 +37,10 @@ async function run() {
     })
 
     //myList
-    app.get('/users', async (req, res) => {
+    app.get('/mylist', async (req, res) => {
       const cursor = touristCollection.find();
-      const users = await cursor.toArray();
-      res.send(users);
+      const mylist = await cursor.toArray();
+      res.send(mylist);
     })
 
 
