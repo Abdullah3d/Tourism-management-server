@@ -36,6 +36,15 @@ async function run() {
       res.send(result);
     })
 
+    const toTouristCollection = client.db('touristDB').collection('country');
+
+    app.get('/country', async (req, res) => {
+      const cursor = toTouristCollection.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+    
+
     //myList
     app.get('/mylist', async (req, res) => {
       const cursor = touristCollection.find();
